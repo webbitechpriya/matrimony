@@ -107,21 +107,31 @@ export default class Otp extends Component {
                             >
                                 <View style={{ flex: 0.48 }}>
                                     <Text style={styles.DobStyle}>DOB*</Text>
-                                    <View style={{ flexDirection: "row", alignItems: "center", borderWidth: 1 }}>
-                                        <TextInput
-                                            // style={styles.input}
-                                            onChangeText={this.onChangeText}
-                                            value={this.state.text}
-                                            placeholder='dd/mm/yyyy'
-                                        />
-                                        <TouchableOpacity onPress={() => this.setState({ isOpen: !this.state.isOpen })} style={{ backgroundColor: "green" }}>
+                                    <View style={{ flexDirection: "row", alignItems: "center", borderWidth: 1, borderColor: 'gray', borderRadius: 10 }}>
+                                        <View style={{ flex: 0.75 }}>
+
+                                            <TextInput
+                                                style={{ marginLeft: 5 }}
+                                                onChangeText={this.onChangeText}
+                                                value={this.state.text}
+                                                placeholder='dd/mm/yyyy'
+                                            />
+                                        </View>
+
+                                        <TouchableOpacity onPress={() => this.setState({ isOpen: !this.state.isOpen })} style={{ flex: 0.25 }} >
                                             <AntDesign name="calendar" size={25} />
 
                                         </TouchableOpacity>
                                     </View>
+                                    {this.state.isOpen ?
+                                        <View style={{ alignItems: "center", alignSelf: "center", justifyContent: 'center' }}>
+                                            <DatePicker
+                                                date={this.state.selectedDate}
+                                                onDateChange={this.handleDateChange}
+                                            />
 
-
-
+                                        </View>
+                                        : null}
 
                                 </View>
 
@@ -196,11 +206,6 @@ export default class Otp extends Component {
                         </View>
                     </View>
 
-                    {this.state.isOpen ?
-                        <DatePicker
-                            date={this.state.selectedDate}
-                            onDateChange={this.handleDateChange}
-                        /> : null}
 
                     <TouchableOpacity onPress={() => this.props.navigation.navigate('Register')} style={styles.otpButton} >
                         <LinearGradient
