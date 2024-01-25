@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     textstyle: {
         fontFamily: font.fontFamily,
         fontSize: 24,
-        fontWeight: '800',
+        fontWeight: '700',
         // color: colors.welcome,
         alignSelf: "center",
         marginTop: 5
@@ -102,7 +102,9 @@ const styles = StyleSheet.create({
         fontSize: 16,
         textAlign: "center",
         fontWeight: '500',
-        marginTop: 10
+        marginTop: 10,
+        fontFamily: font.fontFamily,
+
     },
     input: {
         height: 50,

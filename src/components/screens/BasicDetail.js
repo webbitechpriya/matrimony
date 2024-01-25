@@ -7,12 +7,14 @@ import {
     View,
     TextInput,
     TouchableOpacity,
+    Modal,
+    Alert
 
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import LinearGradient from 'react-native-linear-gradient';
 import *as fonts from '../../fonts/fonts';
-import { Checkbox, Text } from 'react-native-paper';
+import { Button, Checkbox, Text } from 'react-native-paper';
 import { Dropdown } from 'react-native-element-dropdown';
 import DatePicker from 'react-native-date-picker';
 
@@ -30,7 +32,7 @@ export default class Otp extends Component {
             selected: '',
             isFocus: false,
             value: null,
-            isOpen: false,
+            modalVisible: false,
             selectedDate: new Date(),
             data: [
                 { label: 'Item 1', value: '1' },
@@ -55,7 +57,7 @@ export default class Otp extends Component {
 
     render() {
 
-        console.log("state/", this.state.selectedDate)
+        console.log("state/", new Date(this.state.selectedDate))
         return (
             <SafeAreaView style={{ flex: 1 }}>
                 <LinearGradient
@@ -68,7 +70,33 @@ export default class Otp extends Component {
                         <Text style={styles.textStyle}>Basic Details</Text>
                     </View>
                 </LinearGradient>
-                <ScrollView showsVerticalScrollIndicator={false}>
+                <View>
+                    <View style={styles.centeredView}>
+                        <Modal
+                            animationType="slide"
+                            transparent={true}
+                            visible={this.state.modalVisible}
+                            onRequestClose={() => {
+                                Alert.alert('Modal has been closed.');
+                                this.setState({ modalVisible: !this.state.modalVisible })
+                            }}
+                        >
+                            <View style={styles.centeredView}>
+                                <View style={styles.modalView}>
+                                    <TouchableOpacity onPress={() => this.setState({ modalVisible: !this.state.modalVisible })} style={styles.model}>
+                                        <AntDesign name="close" size={30} />
+                                    </TouchableOpacity>
+                                    <View style={{ padding: 5 }}>
+                                        <DatePicker
+                                            date={this.state.selectedDate}
+                                            onDateChange={this.handleDateChange}
+                                        />
+                                    </View>
+
+                                </View>
+                            </View>
+                        </Modal>
+                    </View>
 
 
                     <View style={styles.header}>
@@ -118,20 +146,11 @@ export default class Otp extends Component {
                                             />
                                         </View>
 
-                                        <TouchableOpacity onPress={() => this.setState({ isOpen: !this.state.isOpen })} style={{ flex: 0.25 }} >
+                                        <TouchableOpacity onPress={() => this.setState({ modalVisible: !this.state.modalVisible })} style={{ flex: 0.25 }} >
                                             <AntDesign name="calendar" size={25} />
 
                                         </TouchableOpacity>
                                     </View>
-                                    {this.state.isOpen ?
-                                        <View style={{ alignItems: "center", alignSelf: "center", justifyContent: 'center' }}>
-                                            <DatePicker
-                                                date={this.state.selectedDate}
-                                                onDateChange={this.handleDateChange}
-                                            />
-
-                                        </View>
-                                        : null}
 
                                 </View>
 
@@ -217,16 +236,29 @@ export default class Otp extends Component {
                         </LinearGradient>
                     </TouchableOpacity>
 
-                </ScrollView>
+                </View>
             </SafeAreaView>
         )
     }
 
 }
 const styles = StyleSheet.create({
-    header: {
-        flex: 0.9,
+    // header: {
+    //     flex: 0.9,
+    // },
+    centeredView: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: "rgba(0,0,0,0.6)"
     },
+    modalView: {
+        backgroundColor: 'white',
+        alignItems: 'center',
+        shadowColor: '#000',
+        elevation: 5,
+    },
+    model:{ alignSelf: "flex-end", paddingRight: 20, paddingTop: 10 },
     linearGradient: {
         width: "100%",
         height: 90,

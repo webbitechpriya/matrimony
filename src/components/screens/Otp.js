@@ -8,8 +8,7 @@ import {
     ImageBackground,
 } from 'react-native';
 import banner from '../../assets/otpLogo.jpg';
-import {Text} from 'react-native-paper';
-
+import { Text } from 'react-native-paper';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import *as fonts from '../../fonts/fonts';
 import LinearGradient from 'react-native-linear-gradient';
@@ -23,8 +22,6 @@ export default class Otp extends Component {
         super(props);
         this.state = {
             code: '',
-
-
         }
     }
 
@@ -32,7 +29,7 @@ export default class Otp extends Component {
         return (
             <SafeAreaView>
                 <View >
-                    <ImageBackground source={banner} style={[styles.imageStyle,{width:constant.width}]}>
+                    <ImageBackground source={banner} style={[styles.imageStyle, { width: constant.width }]}>
                         <View style={styles.header}>
                             <TouchableOpacity onPress={() => this.props.navigation.goBack()} style={{ flex: 0.5 }}>
                                 <AntDesign name="left" size={20} color={'white'} />
@@ -72,7 +69,7 @@ export default class Otp extends Component {
                             </TouchableOpacity>
 
                         </View>
-                        <TouchableOpacity style={{ marginTop: 15, alignSelf: "center", }} onPress={() => this.props.navigation.navigate('BasicDetails')}>
+                        <TouchableOpacity style={{ marginTop: 15, alignSelf: "center" }} onPress={() => this.props.navigation.navigate('BasicDetails')}>
                             <LinearGradient
                                 start={{ x: 0.0, y: 0.25 }} end={{ x: 1.0, y: 1.25 }}
                                 colors={['#2BB673', '#00425E']} style={styles.linearGradient}>
@@ -82,8 +79,6 @@ export default class Otp extends Component {
                             </LinearGradient>
                         </TouchableOpacity>
                     </View>
-
-
                 </View>
             </SafeAreaView>
         )
@@ -133,7 +128,7 @@ const styles = StyleSheet.create({
         fontSize: 24,
         fontFamily: fonts.fontFamily,
         color: '#00091F',
-        fontWeight: '700',
+        fontWeight: '600',
         textAlign: "center"
     },
     sendOtp: {
@@ -143,7 +138,6 @@ const styles = StyleSheet.create({
         fontSize: 15,
         marginTop: 10,
         color: '#87898E'
-
     },
     enterOtp: {
         fontSize: 14,

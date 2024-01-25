@@ -33,7 +33,7 @@ function App() {
     <PaperProvider theme={PaperDarkTheme}>
       <NavigationContainer theme={scheme === 'dark' ? DarkTheme : DefaultTheme}>
         <Stack.Navigator
-          initialRouteName='BasicDetails'
+          initialRouteName='Login'
           screenOptions={{
             headerShown: false
           }} >
