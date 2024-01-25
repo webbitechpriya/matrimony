@@ -112,8 +112,7 @@ export default class Otp extends Component {
                                     inputSearchStyle={styles.inputSearchStyle}
                                     iconStyle={styles.iconStyle}
                                     data={this.state.data}
-                                    // containerStyle={{backgroundColor:"red"}}
-
+                                    containerStyle={{ borderRadius: 15, borderWidth: 1, borderColor: 'gray' }}
                                     // search
                                     maxHeight={300}
                                     labelField="label"
@@ -163,7 +162,9 @@ export default class Otp extends Component {
                                         inputSearchStyle={styles.inputSearchStyle}
                                         iconStyle={styles.iconStyle}
                                         data={this.state.data}
-                                        itemTextStyle={{ color: "black" }}
+                                        itemTextStyle={{ color: "gray" }}
+                                        containerStyle={{ borderRadius: 15, borderWidth: 1, borderColor: 'gray' }}
+
 
                                         // search
                                         maxHeight={300}
@@ -258,7 +259,7 @@ const styles = StyleSheet.create({
         shadowColor: '#000',
         elevation: 5,
     },
-    model:{ alignSelf: "flex-end", paddingRight: 20, paddingTop: 10 },
+    model: { alignSelf: "flex-end", paddingRight: 20, paddingTop: 10 },
     linearGradient: {
         width: "100%",
         height: 90,

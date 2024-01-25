@@ -59,6 +59,7 @@ export default class AdvancedSerach extends Component {
                                     inputSearchStyle={styles.inputSearchStyle}
                                     iconStyle={styles.iconStyle}
                                     data={this.state.data}
+                                    containerStyle={{ borderRadius: 15, borderWidth: 1, borderColor: 'gray' }}
                                     itemTextStyle={{ color: "black" }}
                                     // search
                                     maxHeight={300}
@@ -88,6 +89,7 @@ export default class AdvancedSerach extends Component {
                                         iconStyle={styles.iconStyle}
                                         data={this.state.data}
                                         itemTextStyle={{ color: "black" }}
+                                        containerStyle={{ borderRadius: 15, borderWidth: 1, borderColor: 'gray' }}
                                         // search
                                         maxHeight={300}
                                         labelField="label"
@@ -114,6 +116,7 @@ export default class AdvancedSerach extends Component {
                                         iconStyle={styles.iconStyle}
                                         data={this.state.data}
                                         itemTextStyle={{ color: "black" }}
+                                        containerStyle={{ borderRadius: 15, borderWidth: 1, borderColor: 'gray' }}
                                         // search
                                         maxHeight={300}
                                         labelField="label"
@@ -142,6 +145,7 @@ export default class AdvancedSerach extends Component {
                                         iconStyle={styles.iconStyle}
                                         data={this.state.data}
                                         itemTextStyle={{ color: "black" }}
+                                        containerStyle={{ borderRadius: 15, borderWidth: 1, borderColor: 'gray' }}
                                         // search
                                         maxHeight={300}
                                         labelField="label"
@@ -168,6 +172,7 @@ export default class AdvancedSerach extends Component {
                                         iconStyle={styles.iconStyle}
                                         data={this.state.data}
                                         itemTextStyle={{ color: "black" }}
+                                        containerStyle={{ borderRadius: 15, borderWidth: 1, borderColor: 'gray' }}
                                         // search
                                         maxHeight={300}
                                         labelField="label"
@@ -196,6 +201,7 @@ export default class AdvancedSerach extends Component {
                                     iconStyle={styles.iconStyle}
                                     data={this.state.data}
                                     itemTextStyle={{ color: "black" }}
+                                    containerStyle={{ borderRadius: 15, borderWidth: 1, borderColor: 'gray' }}
                                     // search
                                     maxHeight={300}
                                     labelField="label"
@@ -223,6 +229,7 @@ export default class AdvancedSerach extends Component {
                                         iconStyle={styles.iconStyle}
                                         data={this.state.data}
                                         itemTextStyle={{ color: "black" }}
+                                        containerStyle={{ borderRadius: 15, borderWidth: 1, borderColor: 'gray' }}
                                         // search
                                         maxHeight={300}
                                         labelField="label"
@@ -249,6 +256,7 @@ export default class AdvancedSerach extends Component {
                                         iconStyle={styles.iconStyle}
                                         data={this.state.data}
                                         itemTextStyle={{ color: "black" }}
+                                        containerStyle={{ borderRadius: 15, borderWidth: 1, borderColor: 'gray' }}
                                         // search
                                         maxHeight={300}
                                         labelField="label"
@@ -282,6 +290,7 @@ export default class AdvancedSerach extends Component {
                                     iconStyle={styles.iconStyle}
                                     data={this.state.data}
                                     itemTextStyle={{ color: "black" }}
+                                    containerStyle={{ borderRadius: 15, borderWidth: 1, borderColor: 'gray' }}
                                     // search
                                     maxHeight={300}
                                     labelField="label"
@@ -310,6 +319,7 @@ export default class AdvancedSerach extends Component {
                                     iconStyle={styles.iconStyle}
                                     data={this.state.data}
                                     itemTextStyle={{ color: "black" }}
+                                    containerStyle={{ borderRadius: 15, borderWidth: 1, borderColor: 'gray' }}
                                     // search
                                     maxHeight={300}
                                     labelField="label"
@@ -337,6 +347,7 @@ export default class AdvancedSerach extends Component {
                                     iconStyle={styles.iconStyle}
                                     data={this.state.data}
                                     itemTextStyle={{ color: "black" }}
+                                    containerStyle={{ borderRadius: 15, borderWidth: 1, borderColor: 'gray' }}
                                     // search
                                     maxHeight={300}
                                     labelField="label"
@@ -370,6 +381,7 @@ export default class AdvancedSerach extends Component {
                                     iconStyle={styles.iconStyle}
                                     data={this.state.data}
                                     itemTextStyle={{ color: "black" }}
+                                    containerStyle={{ borderRadius: 15, borderWidth: 1, borderColor: 'gray' }}
                                     // search
                                     maxHeight={300}
                                     labelField="label"
@@ -398,6 +410,7 @@ export default class AdvancedSerach extends Component {
                                     iconStyle={styles.iconStyle}
                                     data={this.state.data}
                                     itemTextStyle={{ color: "black" }}
+                                    containerStyle={{ borderRadius: 15, borderWidth: 1, borderColor: 'gray' }}
                                     // search
                                     maxHeight={300}
                                     labelField="label"
@@ -425,6 +438,7 @@ export default class AdvancedSerach extends Component {
                                     iconStyle={styles.iconStyle}
                                     data={this.state.data}
                                     itemTextStyle={{ color: "black" }}
+                                    containerStyle={{ borderRadius: 15, borderWidth: 1, borderColor: 'gray' }}
                                     // search
                                     maxHeight={300}
                                     labelField="label"

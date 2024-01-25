@@ -106,12 +106,12 @@ export default class Home extends Component {
                             </TouchableOpacity>
                         </View>
                     </View>
-                    <View style={{ paddingBottom: 10 }}>
+                    <View style={{ paddingBottom: 10,marginTop:5,paddingRight:15 }}>
                         <FlatList
                             data={this.state.DATA}
                             horizontal
                             showsHorizontalScrollIndicator={false}
-                            renderItem={({ item }) => <TouchableOpacity onPress={() => this.props.navigation.navigate('ProfileDetail', { image: item.image })} style={{ marginLeft: 15 }}>
+                            renderItem={({ item }) => <TouchableOpacity onPress={() => this.props.navigation.navigate('ProfileDetail', { image: item.image })} style={{ marginLeft: 15}}>
                                 <Image source={item.image} style={{ borderRadius: 10 }} />
                                 <Text style={styles.name}>{item.name}</Text>
                                 <Text style={styles.age} >{item.age}</Text>
@@ -145,7 +145,7 @@ export default class Home extends Component {
                         </View>
                     </LinearGradient>
 
-                    <View style={{ padding: 15 }}>
+                    <View style={{ padding: 15,marginTop:5 }}>
                         <View style={styles.match}>
                             <View style={styles.matchText}>
                                 <Text style={styles.allMatch}>Your Daily Recommendations</Text>
@@ -156,7 +156,7 @@ export default class Home extends Component {
                             </TouchableOpacity>
                         </View>
                     </View>
-                    <View style={{ paddingBottom: 10 }}>
+                    <View style={{ paddingBottom: 10 ,paddingRight:15 }}>
                         <FlatList
                             data={this.state.DATA}
                             horizontal
@@ -186,7 +186,7 @@ export default class Home extends Component {
                             </TouchableOpacity>
                         </View>
                     </View>
-                    <View style={{ paddingBottom: 10 }}>
+                    <View style={{ paddingBottom: 10 ,marginTop:5 ,paddingRight:15}}>
                         <FlatList
                             data={this.state.DATA}
                             horizontal
@@ -303,6 +303,7 @@ const styles = StyleSheet.create({
     fontText: {
         fontSize: 12,
         fontWeight: '500',
+        marginLeft:8
         // color: '#232323'
     },
     allMatch: {

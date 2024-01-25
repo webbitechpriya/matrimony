@@ -71,6 +71,7 @@ export default class RegisterContinue extends Component {
                                     iconStyle={styles.iconStyle}
                                     data={this.state.data}
                                     itemTextStyle={{color:"black"}}
+                                    containerStyle={{ borderRadius: 15, borderWidth: 1, borderColor: 'gray' }}
                                     // search
                                     maxHeight={300}
                                     labelField="label"
@@ -97,6 +98,7 @@ export default class RegisterContinue extends Component {
                                     iconStyle={styles.iconStyle}
                                     data={this.state.data}
                                     itemTextStyle={{color:"black"}}
+                                    containerStyle={{ borderRadius: 15, borderWidth: 1, borderColor: 'gray' }}
                                     // search
                                     maxHeight={300}
                                     labelField="label"
@@ -123,6 +125,7 @@ export default class RegisterContinue extends Component {
                                     iconStyle={styles.iconStyle}
                                     data={this.state.data}
                                     itemTextStyle={{color:"black"}}
+                                    containerStyle={{ borderRadius: 15, borderWidth: 1, borderColor: 'gray' }}
                                     // search
                                     maxHeight={300}
                                     labelField="label"
@@ -152,6 +155,7 @@ export default class RegisterContinue extends Component {
                                     iconStyle={styles.iconStyle}
                                     data={this.state.data}
                                     itemTextStyle={{color:"black"}}
+                                    containerStyle={{ borderRadius: 15, borderWidth: 1, borderColor: 'gray' }}
                                     // search
                                     maxHeight={300}
                                     labelField="label"
@@ -179,6 +183,7 @@ export default class RegisterContinue extends Component {
                                     iconStyle={styles.iconStyle}
                                     data={this.state.data}
                                     itemTextStyle={{color:"black"}}
+                                    containerStyle={{ borderRadius: 15, borderWidth: 1, borderColor: 'gray' }}
                                     // search
                                     maxHeight={300}
                                     labelField="label"
@@ -205,6 +210,7 @@ export default class RegisterContinue extends Component {
                                     iconStyle={styles.iconStyle}
                                     data={this.state.data}
                                     itemTextStyle={{color:"black"}}
+                                    containerStyle={{ borderRadius: 15, borderWidth: 1, borderColor: 'gray' }}
                                     // search
                                     maxHeight={300}
                                     labelField="label"
@@ -232,6 +238,7 @@ export default class RegisterContinue extends Component {
                                         iconStyle={styles.iconStyle}
                                         data={this.state.data}
                                         itemTextStyle={{color:"black"}}
+                                        containerStyle={{ borderRadius: 15, borderWidth: 1, borderColor: 'gray' }}
                                         // search
                                         maxHeight={300}
                                         labelField="label"
@@ -258,6 +265,7 @@ export default class RegisterContinue extends Component {
                                         iconStyle={styles.iconStyle}
                                         data={this.state.data}
                                         itemTextStyle={{color:"black"}}
+                                        containerStyle={{ borderRadius: 15, borderWidth: 1, borderColor: 'gray' }}
                                         // search
                                         maxHeight={300}
                                         labelField="label"

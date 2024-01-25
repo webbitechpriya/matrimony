@@ -12,7 +12,7 @@ import {
     Dimensions,
     Appearance
 } from 'react-native';
-import {DarkTheme } from '@react-navigation/native';
+import { DarkTheme } from '@react-navigation/native';
 
 import Feather from 'react-native-vector-icons/Feather';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -35,7 +35,7 @@ export default class ProfileDetail extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            dark:Appearance.getColorScheme(),
+            dark: Appearance.getColorScheme(),
         }
     }
     render() {
@@ -81,7 +81,7 @@ export default class ProfileDetail extends Component {
 
                         </View>
                     </ImageBackground>
-                    <View style={[styles.container,{backgroundColor:this.state.dark === 'dark' ? DarkTheme :'white'}]}>
+                    <View style={[styles.container, { backgroundColor: this.state.dark === 'dark' ? DarkTheme : 'white' }]}>
                         <View style={styles.wholeView}>
                             <View >
                                 <Text style={styles.basic}>Basic Details</Text>
@@ -200,22 +200,16 @@ export default class ProfileDetail extends Component {
                                         start={{ x: 0.0, y: 0.25 }} end={{ x: 1.0, y: 1.25 }}
                                         colors={['#2BB673', '#00425E']} style={styles.linearGradient}>
                                         <Entypo name="location" size={20} style={styles.iconView} color="#FFFFFF" />
-
                                     </LinearGradient>
                                 </View>
                                 <View style={styles.flexText}>
                                     <Text style={styles.textDetail}>Salem,Tamil Nadu,India</Text>
-
                                 </View>
                             </View>
-
-
                         </View>
-
                     </View>
-                    <View style={[styles.container,{backgroundColor:this.state.dark === 'dark' ? DarkTheme :'white'}]}>
+                    <View style={[styles.container, { backgroundColor: this.state.dark === 'dark' ? DarkTheme : 'white' }]}>
                         <View style={styles.wholeView}>
-
                             <View style={styles.iconList}>
                                 <View style={styles.flexIcon}>
                                     <LinearGradient
@@ -225,7 +219,6 @@ export default class ProfileDetail extends Component {
                                     </LinearGradient>
                                 </View>
                                 <View style={styles.flexText}>
-
                                     <Text style={styles.education}>B.E/B.Tech - Undergraduate Degree</Text>
                                     <Text style={styles.textDetail}>UG College</Text>
                                 </View>
@@ -235,7 +228,7 @@ export default class ProfileDetail extends Component {
                     </View>
 
 
-                    <View style={[styles.container,{backgroundColor:this.state.dark === 'dark' ? DarkTheme :'white'}]}>
+                    <View style={[styles.container, { backgroundColor: this.state.dark === 'dark' ? DarkTheme : 'white' }]}>
                         <View style={styles.wholeView}>
 
                             <View style={styles.iconList}>
@@ -258,7 +251,7 @@ export default class ProfileDetail extends Component {
                     </View>
 
 
-                    <View style={[styles.container,{backgroundColor:this.state.dark === 'dark' ? DarkTheme :'white'}]}>
+                    <View style={[styles.container, { backgroundColor: this.state.dark === 'dark' ? DarkTheme : 'white' }]}>
                         <View style={styles.wholeView}>
 
                             <View style={styles.iconList}>
@@ -297,7 +290,7 @@ export default class ProfileDetail extends Component {
 
 
 
-                    <View style={[styles.container,{backgroundColor:this.state.dark === 'dark' ? DarkTheme :'white',marginBottom:80}]}>
+                    <View style={[styles.container, { backgroundColor: this.state.dark === 'dark' ? DarkTheme : 'white', marginBottom: 80 }]}>
                         <View style={styles.wholeView}>
                             <View style={styles.iconList}>
                                 <View style={styles.flexIcon}>
@@ -364,9 +357,10 @@ const styles = StyleSheet.create({
         fontWeight: "500",
         color: '#FFFFFF'
     },
-    basic: { fontWeight: '500', fontSize: 17, 
-    // color: '#000000'
- },
+    basic: {
+        fontWeight: '500', fontSize: 17,
+        // color: '#000000'
+    },
     photoes: {
         height: 40,
         width: 40,
@@ -383,9 +377,10 @@ const styles = StyleSheet.create({
         marginTop: 12
     },
     headerIcon: { alignSelf: 'center', marginTop: 10 },
-    education: { fontSize: 13, fontWeight: '500', 
-    // color: '#000000' 
-},
+    education: {
+        fontSize: 13, fontWeight: '500',
+        // color: '#000000' 
+    },
     likeView: {
         flexDirection: "row",
         alignItems: 'center',
@@ -404,7 +399,7 @@ const styles = StyleSheet.create({
     brief: {
         fontSize: 13,
         fontWeight: '400',
-        color: '#7A7A7A',
+        // color: '#7A7A7A',
         lineHeight: 24
     },
     linearGradient: {
@@ -413,11 +408,15 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         marginTop: 5
     },
-    divider: { height: 1, marginBottom: 7, marginTop: 7 },
+    divider: { height: 1, marginBottom: 7, marginTop: 7, color: '#4F4F4F' },
     wholeView: { paddingTop: 15, paddingLeft: 30, paddingRight: 30, paddingBottom: 15 },
-    container: { marginTop: 10},
+    container: { marginTop: 10 },
     iconView: { alignSelf: "center", marginTop: 6 },
-    textDetail: { fontWeight: '400', fontSize: 13, color: '#4F4F4F', lineHeight: 24 },
+    textDetail: {
+        fontWeight: '400', fontSize: 13,
+        // color: '#4F4F4F', 
+        lineHeight: 24
+    },
     iconList: { flexDirection: "row", alignItems: "center", marginBottom: 5 }
 
 
