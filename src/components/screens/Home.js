@@ -165,7 +165,6 @@ export default class Home extends Component {
                                 <Image source={item.image} style={{ borderRadius: 10 }} />
                                 <Text style={styles.name}>{item.name}</Text>
                                 <Text style={styles.age} >{item.age}</Text>
-
                             </TouchableOpacity>}
                             keyExtractor={item => item.id}
                         />
@@ -195,7 +194,6 @@ export default class Home extends Component {
                                 <Image source={item.image} style={{ borderRadius: 10 }} />
                                 <Text style={styles.name}>{item.name}</Text>
                                 <Text style={styles.age} >{item.age}</Text>
-
                             </TouchableOpacity>}
                             keyExtractor={item => item.id}
                         />

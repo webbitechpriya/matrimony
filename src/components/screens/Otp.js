@@ -33,7 +33,6 @@ export default class Otp extends Component {
                         <View style={styles.header}>
                             <TouchableOpacity onPress={() => this.props.navigation.goBack()} style={{ flex: 0.5 }}>
                                 <AntDesign name="left" size={20} color={'white'} />
-
                             </TouchableOpacity>
                             <Text style={styles.textStyle}>Basic Details</Text>
                         </View>

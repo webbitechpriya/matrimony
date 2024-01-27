@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useColorScheme } from 'react-native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator, TransitionSpecs, CardStyleInterpolators } from '@react-navigation/stack';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { Provider as PaperProvider, DarkTheme as PaperDarkTheme } from 'react-native-paper';
 import Login from './src/components/screens/Login';
@@ -35,10 +35,17 @@ function App() {
         <Stack.Navigator
           initialRouteName='Home'
           screenOptions={{
-            headerShown: false
-          }} >
+            headerShown: false,
+            cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS
+
+          }}
+        >
           <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="Otp" component={Otp} />
+          <Stack.Screen name="Otp" component={Otp}
+            options={{
+              cardStyleInterpolator: CardStyleInterpolators.forFadeFromBottomAndroid
+            }}
+          />
           <Stack.Screen name="BasicDetails" component={BasicDetails} />
           <Stack.Screen name="Register" component={Register} />
           <Stack.Screen name="RegisterContinue" component={RegisterContinue} />

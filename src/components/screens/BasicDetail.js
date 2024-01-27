@@ -17,7 +17,8 @@ import *as fonts from '../../fonts/fonts';
 import { Button, Checkbox, Text } from 'react-native-paper';
 import { Dropdown } from 'react-native-element-dropdown';
 import DatePicker from 'react-native-date-picker';
-
+import { CountryPicker } from "react-native-country-codes-picker";
+import CountryFlag from "react-native-country-flag";
 
 
 
@@ -32,10 +33,14 @@ export default class Otp extends Component {
             selected: '',
             isFocus: false,
             value: null,
+            phone: false,
             modalVisible: false,
+            countryCode:"IN",
+            dial:'+91',
             selectedDate: new Date(),
+            mobileNumber: "",
             data: [
-                { label: 'Item 1', value: '1' },
+                { label: 'Item 1 Item 1 Item 1 Item 1 Item 1', value: '1' },
                 { label: 'Item 2', value: '2' },
                 { label: 'Item 3', value: '3' },
                 { label: 'Item 4', value: '4' },
@@ -192,13 +197,97 @@ export default class Otp extends Component {
                             />
 
                             <Text style={styles.title}> MOBILE NUMBER*</Text>
-                            <View >
+                            <View style={styles.countryView}>
+                                <View style={{ flex: 0.2, alignItems: "center" }}>
+                                    <CountryFlag isoCode={this.state.countryCode} size={25} />
+                                </View>
+                                <TouchableOpacity style={{ flex: 0.1 }} onPress={()=>this.setState({phone:true})}>
+                                    <AntDesign name="caretdown" size={20} />
+                                </TouchableOpacity>
+
+                                <Text style={styles.dial}>{this.state.dial}</Text>
+                                <View style={{ flex: 0.55}}>
+                                    <TextInput
+                                        style={styles.countryInput}
+                                        onChangeText={(text) => this.setState({ mobileNumber: text })}
+                                        value={this.state.mobileNumber}
+                                        maxLength={10}
+                                    />
+                                </View>
+
+
+                            </View>
+
+
+                            <View>
+                                <CountryPicker
+                                    show={this.state.phone}
+                                    lang={'cz'}
+                                    style={{
+                                        // Styles for whole modal [View]
+                                        modal: {
+                                            height: 500,
+                                            // backgroundColor: 'red'
+                                        },
+                                        // Styles for modal backdrop [View]
+                                        backdrop: {
+
+                                        },
+                                        // Styles for bottom input line [View]
+                                        line: {
+
+                                        },
+                                        // Styles for list of countries [FlatList]
+                                        itemsList: {
+
+                                        },
+                                        // Styles for input [TextInput]
+                                        textInput: {
+                                            height: 80,
+                                            borderRadius: 0,
+                                        },
+                                        // Styles for country button [TouchableOpacity]
+                                        countryButtonStyles: {
+                                            height: 80
+                                        },
+                                        // Styles for search message [Text]
+                                        searchMessageText: {
+
+                                        },
+                                        // Styles for search message container [View]
+                                        countryMessageContainer: {
+
+                                        },
+                                        // Flag styles [Text]
+                                        flag: {
+
+                                        },
+                                        // Dial code styles [Text]
+                                        dialCode: {
+
+                                        },
+                                        // Country name styles [Text]
+                                        countryName: {
+
+                                        }
+                                    }}
+                                    pickerButtonOnPress={(item) => {
+                                        console.log("iteeeee", item)
+                                        this.setState({ phone: false  ,countryCode:item.code ,dial:item.dial_code})
+                                        // setCountryCode(item.dial_code);
+                                        // setShow(false);
+                                    }}
+                                />
+
+                            </View>
+
+                            {/* <View >
                                 <TextInput
                                     style={styles.input}
                                     placeholder="Enter Your Mobile Number"
                                     value=""
                                 />
-                            </View>
+                            </View> */}
                             <Text style={styles.title}>E-MAIL ADDRESS*</Text>
                             <TextInput
                                 style={styles.input}
@@ -253,12 +342,15 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: "rgba(0,0,0,0.6)"
     },
+    dial:{ fontSize: 18, fontWeight: '400', fontFamily: 'Poppins', flex: 0.15 },
     modalView: {
         backgroundColor: 'white',
         alignItems: 'center',
         shadowColor: '#000',
         elevation: 5,
     },
+    countryInput:{ fontSize: 18, color: 'black' },
+    countryView:{ flexDirection: "row", margin: 12, alignItems: "center", borderWidth: 1, borderColor: "#BABABA", borderRadius: 10 },
     model: { alignSelf: "flex-end", paddingRight: 20, paddingTop: 10 },
     linearGradient: {
         width: "100%",
@@ -303,7 +395,6 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         borderColor: "#BABABA",
         padding: 10,
-        borderColor: "#BABABA",
 
     },
     selectList: {

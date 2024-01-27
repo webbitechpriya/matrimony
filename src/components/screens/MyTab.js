@@ -10,7 +10,6 @@ import people from '../../assets/people.png';
 import search from '../../assets/search.png';
 import cards from '../../assets/cards.png';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import ShortListProfile from './ShortListProfile';
 
 
@@ -35,7 +34,7 @@ export default function MyTab() {
                     tabBarLabelStyle: { fontSize: 14 },
                     tabBarIcon: ({ focused }) => (
                         <View style={{ borderTopWidth: focused ? 3 : 0, paddingTop: 16, borderTopColor: focused ? "#2BB673" : "" }}>
-                            <Image tintColor={focused ? "#2BB673" : "#ADAFBB"} source={bottom1} style={{ height: 30, width: 30, marginBottom: 20 }} />
+                            <Image tintColor={focused ? "#2BB673" : "#ADAFBB"} source={bottom1} style={{ marginBottom: 20 }} />
 
                         </View>
                     ),
@@ -46,8 +45,7 @@ export default function MyTab() {
                     headerTitleAlign: 'center',
                     tabBarIcon: ({ focused }) => (
                         <View style={{ borderTopWidth: focused ? 3 : 0, paddingTop: 16, borderTopColor: focused ? "#2BB673" : "" }}>
-                            <Ionicons name="copy" size={30} color={focused ? "#2BB673" : "#ADAFBB"} style={{ marginBottom: 20 }} />
-
+                            <Ionicons name="copy" size={23} color={focused ? "#2BB673" : "#ADAFBB"} style={{ marginBottom: 20 }} />
                             {/* <Image tintColor={focused ? "#2BB673" : "#ADAFBB"} source={cards} style={{ height: 30, width:30,marginBottom:20 }} /> */}
                         </View>
                     ),
@@ -59,7 +57,7 @@ export default function MyTab() {
                     tabBarIcon: ({ focused }) => (
                         <View style={{ borderTopWidth: focused ? 3 : 0, paddingTop: 16, borderTopColor: focused ? "#2BB673" : "" }}>
 
-                            <Ionicons name="heart" size={30} color={focused ? "#2BB673" : "#ADAFBB"} style={{ marginBottom: 20 }} />
+                            <Ionicons name="heart" size={25} color={focused ? "#2BB673" : "#ADAFBB"} style={{ marginBottom: 20 }} />
                         </View>
                     ),
                 }} />
@@ -69,10 +67,8 @@ export default function MyTab() {
                     tabBarLabelStyle: { fontSize: 14 },
                     tabBarIcon: ({ focused }) => (
                         <View style={{ borderTopWidth: focused ? 3 : 0, paddingTop: 16, borderTopColor: focused ? "#2BB673" : "" }}>
-                            <Ionicons name="search-circle" size={35} color={focused ? "#2BB673" : "#ADAFBB"} style={{ marginBottom: 18 }} />
-
-
-                            {/* <Image source={search} tintColor={focused ? "#2BB673" : "#ADAFBB"} style={{ height: 30, width: 30 ,marginBottom:20}} /> */}
+                            {/* <Ionicons name="search-circle" size={35} color={focused ? "#2BB673" : "#ADAFBB"} style={{ marginBottom: 18 }} /> */}
+                            <Image source={search} tintColor={focused ? "#2BB673" : "#ADAFBB"} style={{marginBottom:20}} />
                         </View>
                     ),
                 }} />
@@ -82,8 +78,8 @@ export default function MyTab() {
                     tabBarLabelStyle: { fontSize: 14 },
                     tabBarIcon: ({ focused }) => (
                         <View style={{ borderTopWidth: focused ? 3 : 0, paddingTop: 20, borderTopColor: focused ? "#2BB673" : "" }}>
-                            <FontAwesome6 name="user" size={25} color={focused ? "#2BB673" : "#ADAFBB"} style={{ marginBottom: 20 }} />
-                            {/* <Image source={people} tintColor={focused ? "#2BB673" : "#ADAFBB"} style={{ height: 30, width: 30 ,marginBottom:20}} /> */}
+                            {/* <FontAwesome6 name="user" size={25} color={focused ? "#2BB673" : "#ADAFBB"} style={{ marginBottom: 20 }} /> */}
+                            <Image source={people} tintColor={focused ? "#2BB673" : "#ADAFBB"} style={{marginBottom:20}} />
                         </View>
                     ),
                 }} />
