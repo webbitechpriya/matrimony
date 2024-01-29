@@ -13,7 +13,7 @@ import {
     Dimensions
 
 } from 'react-native';
-import {Text} from 'react-native-paper';
+import { Text } from 'react-native-paper';
 import LinearGradient from 'react-native-linear-gradient';
 import *as font from '../../fonts/fonts';
 import *as colors from '../../colors/colors';
@@ -58,6 +58,7 @@ export default class Login extends Component {
                             style={styles.input}
                             onChangeText={this.onChangeText}
                             value={this.state.text}
+                            maxLength={10}
                             placeholder='Email/Phone number'
                         />
                         <TouchableOpacity style={{ marginTop: 5 }} onPress={() => this.props.navigation.navigate('Otp', { phoneNumber: this.state.text })}>

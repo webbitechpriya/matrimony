@@ -202,11 +202,11 @@ export default class Otp extends Component {
                                     <CountryFlag isoCode={this.state.countryCode} size={25} />
                                 </View>
                                 <TouchableOpacity style={{ flex: 0.1 }} onPress={()=>this.setState({phone:true})}>
-                                    <AntDesign name="caretdown" size={20} />
+                                    <AntDesign name="caretdown" size={18} />
                                 </TouchableOpacity>
 
                                 <Text style={styles.dial}>{this.state.dial}</Text>
-                                <View style={{ flex: 0.55}}>
+                                <View style={{ flex: 0.58}}>
                                     <TextInput
                                         style={styles.countryInput}
                                         onChangeText={(text) => this.setState({ mobileNumber: text })}
@@ -342,7 +342,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: "rgba(0,0,0,0.6)"
     },
-    dial:{ fontSize: 18, fontWeight: '400', fontFamily: 'Poppins', flex: 0.15 },
+    dial:{ fontSize: 18, fontWeight: '400', fontFamily: 'Poppins', flex: 0.18 },
     modalView: {
         backgroundColor: 'white',
         alignItems: 'center',
