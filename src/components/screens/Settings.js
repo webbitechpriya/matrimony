@@ -11,7 +11,6 @@ import {
     FlatList,
 } from 'react-native';
 import { Text } from 'react-native-paper';
-
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';

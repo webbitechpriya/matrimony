@@ -5,7 +5,6 @@ import {
     StatusBar,
     StyleSheet,
     Text,
-    useColorScheme,
     ImageBackground,
     View,
     TouchableOpacity,

@@ -3,7 +3,6 @@ import {
     SafeAreaView,
     ScrollView,
     StyleSheet,
-    useColorScheme,
     View,
     TouchableOpacity,
 } from 'react-native';

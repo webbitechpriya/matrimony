@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useColorScheme } from 'react-native';
-import { createStackNavigator, TransitionSpecs, CardStyleInterpolators } from '@react-navigation/stack';
+import { createStackNavigator,CardStyleInterpolators } from '@react-navigation/stack';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { Provider as PaperProvider, DarkTheme as PaperDarkTheme } from 'react-native-paper';
 import Login from './src/components/screens/Login';

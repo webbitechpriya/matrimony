@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import {
     SafeAreaView,
     ScrollView,
-    StatusBar,
     StyleSheet,
-    useColorScheme,
     View,
     Appearance,
     Image,

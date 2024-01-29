@@ -8,7 +8,6 @@ import {
 import *as fonts from '../../fonts/fonts';
 import {
     DrawerContentScrollView,
-    DrawerItemList,
 } from '@react-navigation/drawer';
 import men from '../../assets/men.jpg';
 import AntDesign from 'react-native-vector-icons/AntDesign';

@@ -2,21 +2,17 @@ import React, { Component } from 'react';
 import {
     SafeAreaView,
     ScrollView,
-    StatusBar,
     StyleSheet,
-    useColorScheme,
     View,
     Image,
     LogBox,
     TextInput,
-    TouchableOpacity,
-    Dimensions
+    TouchableOpacity
 
 } from 'react-native';
 import { Text } from 'react-native-paper';
 import LinearGradient from 'react-native-linear-gradient';
 import *as font from '../../fonts/fonts';
-import *as colors from '../../colors/colors';
 LogBox.ignoreLogs(['Warning: ...']);
 // Ignore log notification by message
 LogBox.ignoreAllLogs();//Ignore all log notifications

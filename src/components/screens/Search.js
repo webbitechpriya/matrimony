@@ -3,14 +3,10 @@ import {DarkTheme } from '@react-navigation/native';
 
 import {
     SafeAreaView,
-    ScrollView,
-    StatusBar,
     StyleSheet,
     Text,
-    useColorScheme,
     View,
     TouchableOpacity,
-    Dimensions,
     TextInput,
     Appearance
 
@@ -18,7 +14,6 @@ import {
 import MaterialTabs from 'react-native-material-tabs';
 import LinearGradient from 'react-native-linear-gradient';
 import *as fonts from '../../fonts/fonts';
-import *as constant from '../../constants/constant';
 import AdvancedSerach from "./AdvancedSearch";
 import { Dropdown } from 'react-native-element-dropdown';
 

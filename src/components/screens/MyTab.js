@@ -8,7 +8,6 @@ import Profile from './Profile';
 import bottom1 from '../../assets/bottom1.png';
 import people from '../../assets/people.png';
 import search from '../../assets/search.png';
-import cards from '../../assets/cards.png';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import ShortListProfile from './ShortListProfile';
 

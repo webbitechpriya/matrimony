@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import {
     SafeAreaView,
-    ScrollView,
     StyleSheet,
-    useColorScheme,
     View,
     TextInput,
     TouchableOpacity,
@@ -14,7 +12,7 @@ import {
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import LinearGradient from 'react-native-linear-gradient';
 import *as fonts from '../../fonts/fonts';
-import { Button, Checkbox, Text } from 'react-native-paper';
+import {Checkbox, Text } from 'react-native-paper';
 import { Dropdown } from 'react-native-element-dropdown';
 import DatePicker from 'react-native-date-picker';
 import { CountryPicker } from "react-native-country-codes-picker";

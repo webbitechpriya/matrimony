@@ -17,7 +17,6 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import LinearGradient from 'react-native-linear-gradient';
 import *as fonts from '../../fonts/fonts';
 import *as colors from '../../colors/colors';
-// import { launchImageLibrary, launchCamera } from 'react-native-image-picker';
 import ImagePicker from 'react-native-image-crop-picker';
 
 
