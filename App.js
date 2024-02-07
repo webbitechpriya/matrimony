@@ -33,7 +33,7 @@ function App() {
     <PaperProvider theme={PaperDarkTheme}>
       <NavigationContainer theme={scheme === 'dark' ? DarkTheme : DefaultTheme}>
         <Stack.Navigator
-          initialRouteName='Login'
+          initialRouteName='BasicDetails'
           screenOptions={{
             headerShown: false,
             cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS

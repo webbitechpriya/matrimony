@@ -6,17 +6,19 @@ import {
     TextInput,
     TouchableOpacity,
     Modal,
-    Alert
+    Alert,
+    Button
 
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import LinearGradient from 'react-native-linear-gradient';
 import *as fonts from '../../fonts/fonts';
-import {Checkbox, Text } from 'react-native-paper';
+import { Checkbox, Text, } from 'react-native-paper';
 import { Dropdown } from 'react-native-element-dropdown';
 import DatePicker from 'react-native-date-picker';
 import { CountryPicker } from "react-native-country-codes-picker";
 import CountryFlag from "react-native-country-flag";
+import moment from "moment";
 
 
 
@@ -25,17 +27,17 @@ export default class Otp extends Component {
         super(props);
         this.state = {
             countries: ["Egypt", "Canada", "Australia", "Ireland"],
-            text: "",
+            text: '',
             email: "",
             checked: false,
             selected: '',
             isFocus: false,
             value: null,
-            phone: false,
+            phone: true,
             modalVisible: false,
-            countryCode:"IN",
-            dial:'+91',
-            selectedDate: new Date(),
+            countryCode: "IN",
+            dial: '+91',
+            selectedDate: `${moment(new Date).format('L')}`,
             mobileNumber: "",
             data: [
                 { label: 'Item 1 Item 1 Item 1 Item 1 Item 1', value: '1' },
@@ -51,7 +53,8 @@ export default class Otp extends Component {
         }
     }
     handleDateChange = (newDate) => {
-        this.setState({ selectedDate: newDate })
+
+        this.setState({ selectedDate: `${moment(newDate).format('L')}` })
     }
 
     onChangeText = (text) => {
@@ -60,7 +63,8 @@ export default class Otp extends Component {
 
     render() {
 
-        console.log("state/", new Date(this.state.selectedDate))
+
+        console.log("state/", new Date(this.state.selectedDate), typeof moment(this.state.selectedDate).format('L'))
         return (
             <SafeAreaView style={{ flex: 1 }}>
                 <LinearGradient
@@ -87,13 +91,16 @@ export default class Otp extends Component {
                             <View style={styles.centeredView}>
                                 <View style={styles.modalView}>
                                     <TouchableOpacity onPress={() => this.setState({ modalVisible: !this.state.modalVisible })} style={styles.model}>
-                                        <AntDesign name="close" size={30} />
+                                        <AntDesign name="close" size={30} color={"black"} />
                                     </TouchableOpacity>
                                     <View style={{ padding: 5 }}>
                                         <DatePicker
+                                            textColor="black"
+                                            mode="date" // Set mode to 'date' to hide the time
                                             date={this.state.selectedDate}
                                             onDateChange={this.handleDateChange}
                                         />
+
                                     </View>
 
                                 </View>
@@ -142,15 +149,14 @@ export default class Otp extends Component {
 
                                             <TextInput
                                                 style={{ marginLeft: 5 }}
-                                                onChangeText={this.onChangeText}
-                                                value={this.state.text}
+                                                // onChangeText={this.onChangeText}
+                                                value={this.state.selectedDate}
                                                 placeholder='dd/mm/yyyy'
                                             />
                                         </View>
 
                                         <TouchableOpacity onPress={() => this.setState({ modalVisible: !this.state.modalVisible })} style={{ flex: 0.25 }} >
                                             <AntDesign name="calendar" size={25} />
-
                                         </TouchableOpacity>
                                     </View>
 
@@ -167,9 +173,6 @@ export default class Otp extends Component {
                                         data={this.state.data}
                                         itemTextStyle={{ color: "gray" }}
                                         containerStyle={{ borderRadius: 15, borderWidth: 1, borderColor: 'gray' }}
-
-
-                                        // search
                                         maxHeight={300}
                                         labelField="label"
                                         valueField="value"
@@ -197,14 +200,14 @@ export default class Otp extends Component {
                             <Text style={styles.title}> MOBILE NUMBER*</Text>
                             <View style={styles.countryView}>
                                 <View style={{ flex: 0.2, alignItems: "center" }}>
-                                    <CountryFlag isoCode={this.state.countryCode} size={25} />
+                                    <CountryFlag isoCode={this.state.countryCode} size={22} />
                                 </View>
-                                <TouchableOpacity style={{ flex: 0.1 }} onPress={()=>this.setState({phone:true})}>
-                                    <AntDesign name="caretdown" size={18} />
+                                <TouchableOpacity style={{ flex: 0.1 }} onPress={() => this.setState({ phone: true })}>
+                                    <AntDesign name="caretdown" size={17} />
                                 </TouchableOpacity>
 
                                 <Text style={styles.dial}>{this.state.dial}</Text>
-                                <View style={{ flex: 0.58}}>
+                                <View style={{ flex: 0.58 }}>
                                     <TextInput
                                         style={styles.countryInput}
                                         onChangeText={(text) => this.setState({ mobileNumber: text })}
@@ -221,13 +224,12 @@ export default class Otp extends Component {
                                 <CountryPicker
                                     show={this.state.phone}
                                     lang={'cz'}
+                                    itemCountryNameStyle={{ color: 'red' }}
                                     style={{
-                                        // Styles for whole modal [View]
                                         modal: {
-                                            height: 500,
+                                            height: 400,
                                             // backgroundColor: 'red'
                                         },
-                                        // Styles for modal backdrop [View]
                                         backdrop: {
 
                                         },
@@ -235,18 +237,18 @@ export default class Otp extends Component {
                                         line: {
 
                                         },
-                                        // Styles for list of countries [FlatList]
                                         itemsList: {
-
+                                            color: '#841584',
                                         },
                                         // Styles for input [TextInput]
                                         textInput: {
-                                            height: 80,
+                                            height: 60,
                                             borderRadius: 0,
                                         },
                                         // Styles for country button [TouchableOpacity]
                                         countryButtonStyles: {
-                                            height: 80
+                                            height: 60,
+                                            // color:"red"
                                         },
                                         // Styles for search message [Text]
                                         searchMessageText: {
@@ -258,20 +260,22 @@ export default class Otp extends Component {
                                         },
                                         // Flag styles [Text]
                                         flag: {
-
+                                            fontSize: 24
                                         },
                                         // Dial code styles [Text]
                                         dialCode: {
+                                            color: 'black'
 
                                         },
                                         // Country name styles [Text]
                                         countryName: {
 
+                                            color: 'black'
                                         }
                                     }}
                                     pickerButtonOnPress={(item) => {
                                         console.log("iteeeee", item)
-                                        this.setState({ phone: false  ,countryCode:item.code ,dial:item.dial_code})
+                                        this.setState({ phone: false, countryCode: item.code, dial: item.dial_code })
                                         // setCountryCode(item.dial_code);
                                         // setShow(false);
                                     }}
@@ -340,15 +344,15 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: "rgba(0,0,0,0.6)"
     },
-    dial:{ fontSize: 18, fontWeight: '400', fontFamily: 'Poppins', flex: 0.18 },
+    dial: { fontSize: 18, fontWeight: '400', fontFamily: 'Poppins', flex: 0.18 },
     modalView: {
         backgroundColor: 'white',
         alignItems: 'center',
         shadowColor: '#000',
         elevation: 5,
     },
-    countryInput:{ fontSize: 18, color: 'black' },
-    countryView:{ flexDirection: "row", margin: 12, alignItems: "center", borderWidth: 1, borderColor: "#BABABA", borderRadius: 10 },
+    countryInput: { fontSize: 18, color: 'black' },
+    countryView: { flexDirection: "row", margin: 12, alignItems: "center", borderWidth: 1, borderColor: "#BABABA", borderRadius: 10 },
     model: { alignSelf: "flex-end", paddingRight: 20, paddingTop: 10 },
     linearGradient: {
         width: "100%",
